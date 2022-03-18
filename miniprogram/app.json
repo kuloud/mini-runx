@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/ranking/ranking"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {},
+  "darkmode": false,
+  "usingComponents": {}
+}

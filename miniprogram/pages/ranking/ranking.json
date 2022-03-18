@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "ranking-cells": "../../components/cells/ranking-cells",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
+  }
+}

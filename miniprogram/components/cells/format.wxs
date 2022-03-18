@@ -1,0 +1,56 @@
+
+// 支持es4语法
+var filter = {
+	numberToFixed: function (value) {
+		return value.toFixed(2)
+	},
+
+	rankHighlight: function (type, value) {
+		var color = 'var(--weui-FG-1)'
+		switch (type) {
+			case 'day':
+				if (value >= 5) {
+					color = 'rgb(255, 189, 2)'
+				} else {
+					color = 'rgb(11, 186, 6)'
+				}
+				break;
+			case 'week':
+				if (value >= 10) {
+					color = 'rgb(255, 189, 2)'
+				} else if (value >= 5) {
+					color = 'rgb(11, 186, 6)'
+				} else {
+					color = 'rgb(249, 96, 98)'
+				}
+				break;
+			default:
+				color = 'var(--weui-FG-1)'
+				break;
+		}
+		return color
+	},
+
+	thumbsUpColor: function (member) {
+		var color = '#B3B3B3'
+		if (member.thumbsByMe) {
+			color = '#F25954'
+		}
+
+		return color
+	},
+
+	thumbsUpSize: function (member) {
+		var size = '14px'
+
+		return size
+	},
+}
+
+// 导出对外暴露的属性
+module.exports = {
+	thumbsUpSize: filter.thumbsUpSize,
+	thumbsUpColor: filter.thumbsUpColor,
+	numberToFixed: filter.numberToFixed,
+	rankHighlight: filter.rankHighlight
+}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+    {
+      "name": "dailyPullTrigger",
+      "type": "timer",
+      "config": "55 59 23 * * * *"
+    },
+    {
+      "name": "weeklyPullTrigger",
+      "type": "timer",
+      "config": "55 59 23 * * SUN *"
+    }
+  ]
+}

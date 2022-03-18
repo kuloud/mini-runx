@@ -1,0 +1,11 @@
+<!-- miniprogram/pages/ranking/ranking.wxml -->
+<view class="container">
+    <van-nav-bar title="跑步排行榜" fixed placeholder border="{{ false }}" />
+    <van-tabs active="{{ activeTab }}" bind:change="onChange" swipeable sticky offset-top="{{ navBarHeight}}">
+        <van-tab wx:for="{{tabs}}" wx:for-item="item" title="{{item.title}}">
+            <ranking-cells rankList="{{item.rankList}}" rankType="{{item.rankType}}" />
+        </van-tab>
+    </van-tabs>
+    <van-toast id="van-toast" />
+</view>
+

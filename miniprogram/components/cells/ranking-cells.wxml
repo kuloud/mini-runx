@@ -1,0 +1,20 @@
+<!-- components/ranking-cells.wxml -->
+<wxs module="filter" src="./format.wxs"></wxs>
+<van-cell-group>
+  <van-cell wx:for="{{rankList}}" wx:for-item="item">
+    <view slot="title" style="margin-right: 10px; display: flex;align-items: center;">
+      <view style="width:20px; margin-right: 16px;text-align:right;">{{item.index}}</view>
+      <van-image lazy-load use-error-slot src="{{item.portrait}}" width="36" height="36" round style="margin-right: 16px; width:36px; height: 36px; border-radius:50%; border:2px solid {{item.gender === 2 ? '#eb73ba' : '#72a5d2'}};" />
+      <view style="margin-right: 16px;">{{item.name}}</view>
+    </view>
+    <view slot="right-icon" style=" display: flex; flex-direction: row;justify-content:center; align-items:center;">
+      <view style="color:{{filter.rankHighlight(rankType, item.totalLength)}};">
+        {{filter.numberToFixed(item.totalLength)}}公里
+      </view>
+      <view wx:if="{{rankType != 'total'}}" style="display: flex; flex-direction: column;justify-content:center; align-items:center; padding: 0px 8px ;" bindtap="thumbsUp" data-member="{{item}}">
+        <text style="color:#B3B3B3;">{{item.thumbsUp ? item.thumbsUp : 0}}</text>
+        <van-icon name="like" color="{{filter.thumbsUpColor(item)}}" size="{{filter.thumbsUpSize(item)}}" animation="{{item.thumbsUpAnim}}" />
+      </view>
+    </view>
+  </van-cell>
+</van-cell-group>
